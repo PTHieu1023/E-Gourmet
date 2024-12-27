@@ -1,44 +1,76 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  content: [
+    darkMode: ["class"],
+    content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        primary: {
-          red: 'var(--primary-red)',
-          yellow: 'var(--primary-yellow)',
-          green: 'var(--primary-green)',
-        },
-        secondary: {
-          blue: 'var(--secondary-blue)',
-          gray: 'var(--secondary-gray)',
-          cream: 'var(--secondary-cream)',
-        },
-        accent: {
-          orange: 'var(--accent-orange)',
-          blue: 'var(--accent-blue)',
-        },
-        feedback: {
-          error: 'var(--error-color)',
-          warning: 'var(--warning-color)',
-          success: 'var(--success-color)',
-          info: 'var(--info-color)',
-        },
-        foreground: {
-          primary: 'var(--foreground)',
-          secondary: 'var(--foreground-secondary)',
-        },
-        background: {
-          primary: 'var(--background)',
-          section: 'var(--background-section)',
-        },
-      },
-    },
+  	extend: {
+  		colors: {
+  			primary: {
+  				red: 'var(--primary-red)',
+  				yellow: 'var(--primary-yellow)',
+  				green: 'var(--primary-green)',
+  				DEFAULT: 'hsl(var(--primary))',
+  				foreground: 'hsl(var(--primary-foreground))'
+  			},
+  			secondary: {
+  				blue: 'var(--secondary-blue)',
+  				gray: 'var(--secondary-gray)',
+  				cream: 'var(--secondary-cream)',
+  				DEFAULT: 'hsl(var(--secondary))',
+  				foreground: 'hsl(var(--secondary-foreground))'
+  			},
+  			accent: {
+  				orange: 'var(--accent-orange)',
+  				blue: 'var(--accent-blue)',
+  				DEFAULT: 'hsl(var(--accent))',
+  				foreground: 'hsl(var(--accent-foreground))'
+  			},
+  			feedback: {
+  				error: 'var(--error-color)',
+  				warning: 'var(--warning-color)',
+  				success: 'var(--success-color)',
+  				info: 'var(--info-color)'
+  			},
+  			foreground: 'hsl(var(--foreground))',
+  			background: 'hsl(var(--background))',
+  			card: {
+  				DEFAULT: 'hsl(var(--card))',
+  				foreground: 'hsl(var(--card-foreground))'
+  			},
+  			popover: {
+  				DEFAULT: 'hsl(var(--popover))',
+  				foreground: 'hsl(var(--popover-foreground))'
+  			},
+  			muted: {
+  				DEFAULT: 'hsl(var(--muted))',
+  				foreground: 'hsl(var(--muted-foreground))'
+  			},
+  			destructive: {
+  				DEFAULT: 'hsl(var(--destructive))',
+  				foreground: 'hsl(var(--destructive-foreground))'
+  			},
+  			border: 'hsl(var(--border))',
+  			input: 'hsl(var(--input))',
+  			ring: 'hsl(var(--ring))',
+  			chart: {
+  				'1': 'hsl(var(--chart-1))',
+  				'2': 'hsl(var(--chart-2))',
+  				'3': 'hsl(var(--chart-3))',
+  				'4': 'hsl(var(--chart-4))',
+  				'5': 'hsl(var(--chart-5))'
+  			}
+  		},
+  		borderRadius: {
+  			lg: 'var(--radius)',
+  			md: 'calc(var(--radius) - 2px)',
+  			sm: 'calc(var(--radius) - 4px)'
+  		}
+  	}
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 } satisfies Config;
