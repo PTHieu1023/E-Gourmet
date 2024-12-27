@@ -9,8 +9,34 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: {
+          red: 'var(--primary-red)',
+          yellow: 'var(--primary-yellow)',
+          green: 'var(--primary-green)',
+        },
+        secondary: {
+          blue: 'var(--secondary-blue)',
+          gray: 'var(--secondary-gray)',
+          cream: 'var(--secondary-cream)',
+        },
+        accent: {
+          orange: 'var(--accent-orange)',
+          blue: 'var(--accent-blue)',
+        },
+        feedback: {
+          error: 'var(--error-color)',
+          warning: 'var(--warning-color)',
+          success: 'var(--success-color)',
+          info: 'var(--info-color)',
+        },
+        foreground: {
+          primary: 'var(--foreground)',
+          secondary: 'var(--foreground-secondary)',
+        },
+        background: {
+          primary: 'var(--background)',
+          section: 'var(--background-section)',
+        },
       },
     },
   },

@@ -3,14 +3,96 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary Colors */
+  --primary-red: hsl(356, 75%, 53%);
+  /* Crimson Red - Primary Actions, Alerts */
+  --primary-yellow: hsl(28, 89%, 65%);
+  /* Golden Yellow - Ratings, Highlights */
+  --primary-green: hsl(168, 47%, 42%);
+  /* Forest Green - Success, Filters */
+
+  /* Secondary Colors */
+  --secondary-blue: hsl(210, 29%, 28%);
+  /* Slate Blue - Headers, Navigation */
+  --secondary-gray: hsl(0, 0%, 90%);
+  /* Warm Gray - Borders, Dividers */
+  --secondary-cream: hsl(10, 50%, 94%);
+  /* Cream White - Backgrounds, Forms */
+
+  /* Accent Colors */
+  --accent-orange: hsl(30, 95%, 55%);
+  /* Amber Orange - Notifications, Hover Effects */
+  --accent-blue: hsl(217, 91%, 60%);
+  /* Sky Blue - Links, Hover Highlights */
+
+  /* Feedback Colors */
+  --error-color: hsl(356, 75%, 53%);
+  /* Crimson Red - Errors, Validation Messages */
+  --warning-color: hsl(30, 95%, 55%);
+  /* Amber Orange - Warnings */
+  --success-color: hsl(168, 47%, 42%);
+  /* Forest Green - Success Messages */
+  --info-color: hsl(217, 91%, 60%);
+  /* Sky Blue - Information Messages */
+
+  /* Text Colors */
+  --foreground: hsl(0, 0%, 20%);
+  /* Dark Gray - Main text */
+  --foreground-secondary: hsl(0, 0%, 40%);
+  /* Light Gray - Secondary text */
+
+  /* Background Colors */
+  --background: hsl(10, 50%, 94%);
+  /* Light mode background */
+  --background-section: hsl(0, 0%, 98%);
+  /* Slightly lighter section backgrounds */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Primary Colors */
+    --primary-red: hsl(356, 75%, 60%);
+    /* Softer Red for dark backgrounds */
+    --primary-yellow: hsl(45, 100%, 50%);
+    /* Warmer Yellow for highlights */
+    --primary-green: hsl(168, 47%, 48%);
+    /* Same Green for success */
+
+    /* Secondary Colors */
+    --secondary-blue: hsl(210, 29%, 18%);
+    /* Darker Blue for navigation */
+    --secondary-gray: hsl(0, 0%, 40%);
+    /* Medium Gray for dividers */
+    --secondary-cream: hsl(240, 10%, 10%);
+    /* Charcoal Black - Backgrounds */
+
+    /* Accent Colors */
+    --accent-orange: hsl(30, 95%, 55%);
+    /* Amber Orange - Notifications */
+    --accent-blue: hsl(217, 91%, 70%);
+    /* Lighter Blue for links */
+
+    /* Feedback Colors */
+    --error-color: hsl(356, 75%, 60%);
+    /* Softer Red for errors */
+    --warning-color: hsl(30, 95%, 55%);
+    /* Amber Orange for warnings */
+    --success-color: hsl(168, 47%, 48%);
+    /* Same Green for consistency */
+    --info-color: hsl(217, 91%, 70%);
+    /* Light Blue for information */
+
+    /* Text Colors */
+    --foreground: hsl(0, 0%, 90%);
+    /* Light Gray for text */
+    --foreground-secondary: hsl(0, 0%, 70%);
+    /* Subtle Gray for secondary text */
+
+    /* Background Colors */
+    --background: hsl(240, 10%, 10%);
+    /* Dark mode background */
+    --background-section: hsl(240, 10%, 15%);
+    /* Slightly lighter section background */
   }
 }
 
