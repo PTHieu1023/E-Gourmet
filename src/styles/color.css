@@ -2,100 +2,23 @@
 /*        LIGHT MODE COLORS      */
 /* ============================= */
 :root {
-    /* Primary Colors */
-    --primary-red: hsl(356, 75%, 53%);
-    /* Crimson Red - Primary Actions, Alerts */
-    --primary-yellow: hsl(356, 75%, 53%);
-    /* Golden Yellow - Ratings, Highlights */
-    --primary-green: hsl(168, 47%, 42%);
-    /* Forest Green - Success, Filters */
-
-    /* Secondary Colors */
-    --secondary-blue: hsl(210, 29%, 28%);
-    /* Slate Blue - Headers, Navigation */
-    --secondary-gray: hsl(0, 0%, 90%);
-    /* Warm Gray - Borders, Dividers */
-    --secondary-cream: hsl(10, 50%, 94%);
-    /* Cream White - Backgrounds, Forms */
-
-    /* Accent Colors */
-    --accent-orange: hsl(30, 95%, 55%);
-    /* Amber Orange - Notifications, Hover Effects */
-    --accent-blue: hsl(217, 91%, 60%);
-    /* Sky Blue - Links, Hover Highlights */
-
-    /* Feedback Colors */
-    --error-color: hsl(356, 75%, 53%);
-    /* Crimson Red - Errors, Validation Messages */
-    --warning-color: hsl(30, 95%, 55%);
-    /* Amber Orange - Warnings */
-    --success-color: hsl(168, 47%, 42%);
-    /* Forest Green - Success Messages */
-    --info-color: hsl(217, 91%, 60%);
-    /* Sky Blue - Information Messages */
-
-    /* Text Colors */
-    --text-primary: hsl(0, 0%, 20%);
-    /* Dark Gray - Main text */
-    --text-secondary: hsl(0, 0%, 40%);
-    /* Light Gray - Secondary text */
-    --text-white: hsl(0, 0%, 100%);
-    /* White - Light text for contrast */
-
-    /* Background Colors */
-    --background-light: hsl(10, 50%, 94%);
-    /* Light mode background */
-    --background-section: hsl(0, 0%, 98%);
-    /* Slightly lighter section backgrounds */
-}
-
-/* ============================= */
-/*        DARK MODE COLORS       */
-/* ============================= */
-[data-theme="dark"] {
-    /* Primary Colors */
-    --primary-red: hsl(356, 75%, 60%);
-    /* Softer Red for dark backgrounds */
-    --primary-yellow: hsl(45, 100%, 50%);
-    /* Warmer Yellow for highlights */
-    --primary-green: hsl(168, 47%, 48%);
-    /* Same Green for success */
-
-    /* Secondary Colors */
-    --secondary-blue: hsl(210, 29%, 18%);
-    /* Darker Blue for navigation */
-    --secondary-gray: hsl(0, 0%, 40%);
-    /* Medium Gray for dividers */
-    --secondary-cream: hsl(240, 10%, 10%);
-    /* Charcoal Black - Backgrounds */
-
-    /* Accent Colors */
-    --accent-orange: hsl(30, 95%, 55%);
-    /* Amber Orange - Notifications */
-    --accent-blue: hsl(217, 91%, 70%);
-    /* Lighter Blue for links */
-
-    /* Feedback Colors */
-    --error-color: hsl(356, 75%, 60%);
-    /* Softer Red for errors */
-    --warning-color: hsl(30, 95%, 55%);
-    /* Amber Orange for warnings */
-    --success-color: hsl(168, 47%, 48%);
-    /* Same Green for consistency */
-    --info-color: hsl(217, 91%, 70%);
-    /* Light Blue for information */
-
-    /* Text Colors */
-    --text-primary: hsl(0, 0%, 90%);
-    /* Light Gray for text */
-    --text-secondary: hsl(0, 0%, 70%);
-    /* Subtle Gray for secondary text */
-    --text-white: hsl(0, 0%, 100%);
-    /* White for contrast */
-
-    /* Background Colors */
-    --background-dark: hsl(240, 10%, 10%);
-    /* Dark mode background */
-    --background-section-dark: hsl(240, 10%, 15%);
-    /* Slightly lighter section background */
+    --crimson-red: hsl(356, 75%, 53%);
+    --golden-yellow: hsl(356, 75%, 53%);
+    --forest-green: hsl(168, 47%, 42%);
+    --slate-blue: hsl(210, 29%, 28%);
+    --warm-gray: hsl(0, 0%, 90%);
+    --cream-white: hsl(10, 50%, 94%);
+    --amber-orange: hsl(30, 95%, 55%);
+    --sky-blue: hsl(217, 91%, 60%);
+    --dark-gray: hsl(0, 0%, 20%);
+    --light-gray: hsl(0, 0%, 40%);
+    --softer-red: hsl(356, 75%, 60%);
+    --warmer-yellow: hsl(45, 100%, 50%);
+    --darker-blue: hsl(210, 29%, 18%);
+    --medium-gray: hsl(0, 0%, 40%);
+    --charcoal-black: hsl(240, 10%, 10%);
+    --lighter-blue: hsl(217, 91%, 70%);
+    --subtle-white: hsl(0, 0%, 90%);
+    --subtle-secondary: hsl(0, 0%, 70%);
+    --light-charcoal-black: hsl(240, 10%, 15%);
 }

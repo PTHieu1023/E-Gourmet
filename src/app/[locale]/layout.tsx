@@ -3,26 +3,41 @@ import "@/styles/globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { inter } from "@/lib/font";
 import { NextIntlClientProvider } from "next-intl";
-import { getLocale, getMessages } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
+import Header from "@/components/header";
+import { routing } from "@/i18n/routing";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "E-Gourmet",
   description: "Online food review platform",
 };
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 export default async function RootLayout({
   children,
+  params
+
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
 
-  const locale = await getLocale();
+  const { locale } = await params;
+
+  if (!routing.locales.includes(locale as any)) {
+    notFound();
+  }
+  setRequestLocale(locale);
   const messages = await getMessages();
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${inter.className} antialiased`}
+        className={`${inter.className} antialiased text-[14px]`}
       >
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
@@ -30,6 +45,7 @@ export default async function RootLayout({
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange>
+            <Header />
             {children}
           </ThemeProvider>
         </NextIntlClientProvider>

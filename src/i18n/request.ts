@@ -1,20 +1,17 @@
 import { getRequestConfig } from 'next-intl/server';
-import { headers } from 'next/headers';
+import { routing } from './routing';
 
-const getLocale = async () => {
-    const localeHeader = (await headers()).get('locale');
-    if (localeHeader) return localeHeader;
-    // const session: any = await getAuthSession();
-    // if (session?.user?.locale) return session.user.locale;
-    return 'en';
-}
+export default getRequestConfig(async ({ requestLocale }) => {
+    // This typically corresponds to the `[locale]` segment
+    let locale = await requestLocale;
 
-const configI18NRequest = async () => {
-    const locale = await getLocale();
+    // Ensure that a valid locale is used
+    if (!locale || !routing.locales.includes(locale as any)) {
+        locale = routing.defaultLocale;
+    }
+
     return {
-        locale: locale,
-        messages: (await import(`@/i18n/messages/${locale}.json`)).default
+        locale,
+        messages: (await import(`./messages/${locale}.json`)).default
     };
-}
-
-export default getRequestConfig(configI18NRequest);
+});
