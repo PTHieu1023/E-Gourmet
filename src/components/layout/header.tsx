@@ -1,10 +1,10 @@
 import Link from "next/link";
-import UserButtons from "./user-buttons";
-import SearchBar from "./searchbar";
+import UserButtons from "@/components/layout/user-buttons";
+import SearchBar from "@/components/layout/searchbar";
 import { pacifico } from "@/lib/font";
 import { ChefHat, Home, Utensils } from "lucide-react";
-import NavBar, { NavItemProps } from "./navbar";
-import { getLocale } from "next-intl/server";
+import NavBar, { NavItemProps } from "@/components/layout/navbar";
+import NoticeButton from "./notice-button";
 
 const navLinks: NavItemProps[] = [
     { href: "/", label: "Home", icon: <Home aria-hidden="true" /> },
@@ -13,7 +13,6 @@ const navLinks: NavItemProps[] = [
 ]
 
 export default async function Header() {
-    const locale = await getLocale()
     return (
         <div className={"h-[56px] w-full bg-dark-teal-blue px-[20px] flex justify-between items-center sticky top-0"}>
             <div className={"flex gap-8 w-1/4 h-full items-center"}>
@@ -24,7 +23,10 @@ export default async function Header() {
             <NavBar items={navLinks} />
             <div className={"flex items-center gap-8 w-1/4 h-full"}>
                 <SearchBar className={"rounded-full h-[32px] bg-background"} />
-                <UserButtons locale={locale} />
+                <div className={"flex gap-4 items-center h-full"}>
+                    <NoticeButton />
+                    <UserButtons />
+                </div>
             </div>
         </div>
     )

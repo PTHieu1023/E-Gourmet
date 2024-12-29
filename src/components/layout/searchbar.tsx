@@ -48,7 +48,7 @@ export default function SearchBar({ className }: SearchBarProps) {
     )
 }
 
-function SearchItemList({ items }: { items?: any[] }) {
+function SearchItemList({ items }: { items?: string[] }) {
     if (!items || items.length === 0)
         return null
     return (

@@ -4,8 +4,8 @@ import { ThemeProvider } from "@/providers/theme-provider";
 import { inter } from "@/lib/font";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
-import Header from "@/components/header";
-import { routing } from "@/i18n/routing";
+import Header from "@/components/layout/header";
+import { Locales, routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default async function RootLayout({
 
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale as Locales)) {
     notFound();
   }
   setRequestLocale(locale);
