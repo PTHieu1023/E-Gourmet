@@ -36,7 +36,7 @@ function NavItem({ href, label, icon }: NavItemProps) {
                 )}
                 aria-label={label}>
                 {icon}
-                <h2 className={"hidden absolute top-full py-1 px-3 bg-foreground text-background rounded-xl group-hover:block"}>
+                <h2 className={"hidden absolute top-full py-1 px-3 bg-foreground text-background rounded-xl group-hover:block w-max"}>
                     {label}
                 </h2>
             </Link>

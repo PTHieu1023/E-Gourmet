@@ -1,5 +1,25 @@
 {
-    "HomePage": {
-        "title": "Xin chào!"
+    "Header": {
+        "NavBar": {
+            "home": "Trang chủ",
+            "restaurant": "Nhà hàng",
+            "food": "Món ăn"
+        },
+        "UserMenu": {
+            "dashboard": "Bảng điều khiển",
+            "theme": "Chủ đề",
+            "language": "Ngôn ngữ",
+            "logout": "Đăng xuất",
+            "Theme": {
+                "light": "Sáng",
+                "dark": "Tối"
+            }
+        },
+        "NoticeMenu": {
+            "markAsRead": "Đánh giấu là đã đọc",
+            "newNotice": "Bạn có {newNotice} tin nhắn mới",
+            "more": "Xem thêm"
+        },
+        "search": "Tìm kiếm"
     }
 }

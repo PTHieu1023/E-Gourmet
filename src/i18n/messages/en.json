@@ -1,5 +1,25 @@
 {
-    "HomePage": {
-        "title": "Hello world!"
+    "Header": {
+        "NavBar": {
+            "home": "Home",
+            "restaurant": "Restaurant",
+            "food": "Food"
+        },
+        "UserMenu": {
+            "dashboard": "Dashboard",
+            "theme": "Theme",
+            "language": "Language",
+            "logout": "Log out",
+            "Theme": {
+                "light": "Light",
+                "dark": "Dark"
+            }
+        },
+        "NoticeMenu": {
+            "markAsRead": "Mark as read",
+            "newNotice": "You have {newNotice} new messages",
+            "more": "More"
+        },
+        "search": "Search"
     }
 }

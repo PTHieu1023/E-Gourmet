@@ -6,12 +6,9 @@ export default async function Home({
 }: {
   params: Promise<{ locale: Locales }>
 }) {
-  const { locale } = await params;
-  setRequestLocale(locale);
-  const t = await getTranslations()
   return (
     <main className="container">
-      {t('HomePage.title')}
+      ok
     </main>
   );
 }

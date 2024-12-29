@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { redirect, usePathname } from "@/i18n/routing";
 import Image from "next/image";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 
 type Locales = {
@@ -40,8 +40,9 @@ export default function UserMenu({ user }: { user: string }) {
     const pathName = usePathname();
     const { resolvedTheme, setTheme } = useTheme();
     const locale = useLocale()
+    const t = useTranslations()
     return (
-        <DropdownMenuContent className="w-56  border-light-gray" align="end" sideOffset={14}>
+        <DropdownMenuContent className="w-56  border-light-gray m-1" sideOffset={14}>
             <DropdownMenuItem>
                 <User />
                 <span>{user}</span>
@@ -49,28 +50,28 @@ export default function UserMenu({ user }: { user: string }) {
             <DropdownMenuSeparator />
             <DropdownMenuItem>
                 <LayoutDashboard />
-                <span>Dashboard</span>
+                <span>{t("Header.UserMenu.dashboard")}</span>
             </DropdownMenuItem>
             <DropdownMenuSub>
                 <DropdownMenuSubTrigger>
                     {resolvedTheme === 'light' ? <Sun /> : <Moon />}
-                    <span>Theme</span>
+                    <span>{t("Header.UserMenu.theme")}</span>
                 </DropdownMenuSubTrigger>
                 <DropdownMenuSubContent className={" rounded border border-solid border-light-gray p-1"} sideOffset={8}>
                     <DropdownMenuItem onSelect={() => setTheme('light')}>
                         <Sun />
-                        <span>Light</span>
+                        <span>{t("Header.UserMenu.Theme.light")}</span>
                     </DropdownMenuItem>
                     <DropdownMenuItem onSelect={() => setTheme('dark')} >
                         <Moon />
-                        <span>Dark</span>
+                        <span>{t("Header.UserMenu.Theme.dark")}</span>
                     </DropdownMenuItem>
                 </DropdownMenuSubContent>
             </DropdownMenuSub>
             <DropdownMenuSub>
                 <DropdownMenuSubTrigger>
                     <Image src={locales[locale].image} width={18} height={18} alt={locale} />
-                    <span>Language</span>
+                    <span>{t("Header.UserMenu.language")}</span>
                 </DropdownMenuSubTrigger>
                 <DropdownMenuSubContent className={" rounded border border-solid border-light-gray p-1"} sideOffset={8}>
                     {Object.keys(locales).map(key => (
@@ -83,7 +84,7 @@ export default function UserMenu({ user }: { user: string }) {
             </DropdownMenuSub>
             <DropdownMenuItem>
                 <LogOut />
-                <span>Log Out</span>
+                <span>{t("Header.UserMenu.logout")}</span>
             </DropdownMenuItem>
         </DropdownMenuContent >
     )

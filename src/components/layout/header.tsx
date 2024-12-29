@@ -5,14 +5,15 @@ import { pacifico } from "@/lib/font";
 import { ChefHat, Home, Utensils } from "lucide-react";
 import NavBar, { NavItemProps } from "@/components/layout/navbar";
 import NoticeButton from "./notice-button";
-
-const navLinks: NavItemProps[] = [
-    { href: "/", label: "Home", icon: <Home aria-hidden="true" /> },
-    { href: "/restaurants", label: "Restaurant", icon: <ChefHat aria-hidden="true" /> },
-    { href: "/foods", label: "Food", icon: <Utensils aria-hidden="true" /> }
-]
+import { getTranslations } from "next-intl/server";
 
 export default async function Header() {
+    const t = await getTranslations();
+    const navLinks: NavItemProps[] = [
+        { href: "/", label: t("Header.NavBar.home"), icon: <Home aria-hidden="true" /> },
+        { href: "/restaurants", label: t("Header.NavBar.restaurant"), icon: <ChefHat aria-hidden="true" /> },
+        { href: "/foods", label: t("Header.NavBar.food"), icon: <Utensils aria-hidden="true" /> }
+    ]
     return (
         <div className={"h-[56px] w-full bg-dark-teal-blue px-[20px] flex justify-between items-center sticky top-0"}>
             <div className={"flex gap-8 w-1/4 h-full items-center"}>
