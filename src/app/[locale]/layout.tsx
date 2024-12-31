@@ -5,9 +5,10 @@ import { inter } from "@/lib/font";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import Header from "@/components/layout/header";
-import { Locales, routing } from "@/i18n/routing";
+import { SupportedLocale, routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 
+// Static metadata (optional dynamic metadata example below)
 export const metadata: Metadata = {
   title: "E-Gourmet",
   description: "Online food review platform",
@@ -20,15 +21,12 @@ export function generateStaticParams() {
 export default async function RootLayout({
   children,
   params
-
 }: Readonly<{
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }>) {
-
   const { locale } = await params;
-
-  if (!routing.locales.includes(locale as Locales)) {
+  if (!routing.locales.includes(locale as SupportedLocale)) {
     notFound();
   }
   setRequestLocale(locale);

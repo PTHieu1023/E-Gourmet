@@ -4,7 +4,6 @@ import { LayoutDashboard, LogOut, Moon, Sun, User } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import {
-
     DropdownMenuSubContent,
     DropdownMenuItem,
     DropdownMenuSub,
@@ -12,19 +11,17 @@ import {
     DropdownMenuContent,
     DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu"
+
 import { redirect, usePathname } from "@/i18n/routing";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 
-
-type Locales = {
+export const locales: {
     [key: string]: {
         name: string;
         image: string;
     };
-};
-
-export const locales: Locales = {
+} = {
     "vi": {
         name: "Tiếng Việt",
         image: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAACVklEQVR4nO1XPW8TQRC935BAUkMoLPt2Zs8WxudIkaAhoUMCCqgoKKmo+Qg9AoEiQccfoKPJbwDC3e7ZiRRFfEkOyCAhKOI4EovmcCIry93u+i5dnjTSaW5v39uZ2d05zzvGBNhoNE4I3wfB+aWYsaWYMdatVKa9o0QSBGck4rIAiCSi+p8JgPcS8YGs1eZKIxa+PysAViTAMItYMxoL8CwCmClGHgShQNy2JtYj0o8ZW5iMHPGaQBxMSn4gAnEgOL/qRC45b5dBPiZi1zoSwvdnJeLXssjHRGyvcX7SLABgpWzyMXtq3mrgUO3ByBxSIRg7nZ17xIcuK9q6UVdb1+uuO+N+noDYZbLvL5qq/7zpWgtrmcerdMknRzVM2mrYCdNnBwF/kmp1Ss8/Is/7sNNE9el2Q30eWW/5rFL9+dToed9PY2hsrgjfB01AzNiSSf2Hm3W1t9E+ID5se5tt9fGWuSYSgEU9AgCLNiFcX+Dq1+uWRv57taXWz3O7VABc1AuQc7TN4+bluiaAfLbf0/WtCehWKtO2E3x79C//u1GYGj2Tr1AREkb3uXGSwZtQ/Xx1TnXnueqEXP142Ux9lgt462VBUjNhqoELXH2509D85KN3xggA3M0WUKvN0XFpmwpXo7kjgFOZAgjUyRyZAIDHngkRwEyRLiiHvEenrefQig1KDP1OzFjLinwf1EaV1JLtJIxd8SZBzFirYFPac175YVAbRZ2My+5IGw/EJ9Y5twF1MtRM0H2eQ/5OANwzbrWiSKrVKTrPR79l6a9Z5vF6DC8ffwHgnh55scU/FgAAAABJRU5ErkJggg=="

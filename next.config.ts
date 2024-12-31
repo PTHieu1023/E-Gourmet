@@ -5,6 +5,7 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
+    output: 'standalone',
     images: {
         minimumCacheTTL: 60
     }
